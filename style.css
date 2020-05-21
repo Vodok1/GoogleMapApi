@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 body {
+  height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -14,17 +15,17 @@ body {
     rgba(9, 102, 121, 1) 35%,
     rgba(0, 212, 255, 1) 100%
   );
+  background-size: cover;
 }
 #map {
   border: 2px solid white;
   opacity: 0.8;
-  height: 80vh;
+  height: 80%;
   width: 100%;
 }
 h3 {
-  margin: 15px;
+  margin-bottom: 15px;
   border: 2px solid white;
-
   width: 50%;
   background-color: rgba(95, 158, 160, 0.534);
   font-size: 25px;
