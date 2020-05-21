@@ -10,13 +10,22 @@ function initMap() {
   xhr.onload = function () {
     if (xhr.status === 200) {
       const response = JSON.parse(xhr.responseText);
+
       for (let i = 0; i < response.features.length; i++) {
         const coords = response.features[i].geometry.coordinates;
         const latLng = new google.maps.LatLng(coords[1], coords[0]);
-        //magnitude = response.features[i].properties.mag;
+        const magnitude = response.features[i].properties.mag;
         const marker = new google.maps.Marker({
           position: latLng,
           map: map,
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            fillColor: "red",
+            fillOpacity: 0.2,
+            scale: Math.pow(2, magnitude) / 2,
+            strokeColor: "white",
+            strokeWeight: 0.5,
+          },
         });
       }
     }
